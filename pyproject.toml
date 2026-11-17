@@ -1,0 +1,24 @@
+[project]
+name = "git-tools-mcp-agent"
+version = "0.1.0"
+description = "A CLI agent that reads your staged git changes and commits them, using an OpenRouter model that calls the git tools MCP server."
+readme = "README.md"
+authors = [
+    { name = "kaushik", email = "hello@nononsensecode.dev" }
+]
+requires-python = ">=3.14"
+dependencies = [
+    "git-tools-mcp-client",
+    "openai>=3.52.0",
+    "python-dotenv>=1.2.4",
+]
+
+[project.scripts]
+git-tools-mcp-agent = "git_tools_mcp_agent:main"
+
+[build-system]
+requires = ["uv_build>=0.13.1,<0.14.0"]
+build-backend = "uv_build"
+
+[tool.uv.sources]
+git-tools-mcp-client = { git = "https://github.com/nononsense-ai/git-tools-mcp-client.git" }
