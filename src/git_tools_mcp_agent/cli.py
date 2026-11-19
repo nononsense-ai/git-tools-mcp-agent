@@ -1,10 +1,10 @@
 import argparse
+import asyncio
 import os
 import sys
 from pathlib import Path
 
-from dotenv.main import load_dotenv
-from git_tools_mcp_client.client import asyncio
+from dotenv import load_dotenv
 from git_tools_mcp_client.config import load_params, resolve_repo
 from git_tools_mcp_client.exceptions import ClientError
 from openai import OpenAIError
@@ -32,7 +32,7 @@ def parse_args() -> argparse.Namespace:
         "--config",
         type=Path,
         default=Path(os.environ.get("GIT_TOOLS_CONFIG", "mcp.json")),
-        help="MCP servers config (default: $GIT_TOOLS_CONFIG, else mcp.json",
+        help="MCP servers config (default: $GIT_TOOLS_CONFIG, else mcp.json)",
     )
     p.add_argument("--server", default="git-tools", help="server name in the config")
     p.add_argument("--model", default=DEFAULT_MODEL, help="OpenRouter model id")

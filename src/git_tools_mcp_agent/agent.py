@@ -16,7 +16,7 @@ SYSTEM_PROMPT = (
     "You are a git assistant. Use the tools to inspect the staged changes "
     "and commit them when asked. Always call git_diff before git_commit and "
     "write a commit message that matches the real changes. "
-    "Nevent invent diff content"
+    "Never invent diff content."
 )
 DEFAULT_MAX_STEPS = 8
 

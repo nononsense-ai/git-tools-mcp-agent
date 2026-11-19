@@ -5,7 +5,7 @@ from openai.types.chat import ChatCompletionToolUnionParam
 
 
 class AgentGitToolsClient(GitToolsClient):
-    """GitToolsClient plus a generic toold discovery and dispatch for an LLM agent"""
+    """GitToolsClient plus generic tool discovery and dispatch for an LLM agent."""
 
     async def openai_tools(self) -> list[ChatCompletionToolUnionParam]:
         tools = (await self._client.list_tools()).tools
